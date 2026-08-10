@@ -27,6 +27,14 @@ const assets = {
   performance: "/assets/bidato-performance.png",
 };
 
+const clientLogos = [
+  { name: "Hospital Británico", src: "/clients/hospital-britanico.png", size: "britanico" },
+  { name: "Sanatorio Finochietto", src: "/clients/sanatorio-finochietto.png", size: "finochietto" },
+  { name: "iMAXE", src: "/clients/imaxe.png", size: "imaxe" },
+  { name: "CITO", src: "/clients/cito.png", size: "cito" },
+  { name: "Grupo Iraola", src: "/clients/grupo-iraola.png", size: "iraola" },
+];
+
 const capabilities = [
   {
     number: "01",
@@ -198,8 +206,7 @@ function Hero() {
 }
 
 function Credibility() {
-  const names = ["Hospital Británico", "Sanatorio Finochietto", "Medité"];
-  const repeated = [...names, ...names, ...names];
+  const repeated = [...clientLogos, ...clientLogos, ...clientLogos];
 
   return (
     <section className="credibility" id="credibilidad">
@@ -212,10 +219,12 @@ function Credibility() {
       </div>
       <div className="marquee" aria-label="Organizaciones con las que BiDaTo tiene experiencia">
         <div className="marquee__track">
-          {repeated.map((name, index) => (
-            <div className="client-name" key={`${name}-${index}`}>
-              <span>{name}</span>
-              <span className="client-name__dot" aria-hidden="true" />
+          {repeated.map((client, index) => (
+            <div
+              className={`client-logo client-logo--${client.size}`}
+              key={`${client.name}-${index}`}
+            >
+              <img src={client.src} alt={client.name} />
             </div>
           ))}
         </div>
@@ -238,7 +247,7 @@ function Problem() {
       <div className="page-grid">
         <h2 className="word-reveal" aria-label="La complejidad frena a las organizaciones.">
           {sentence.map((word, index) => (
-            <span key={`${word}-${index}`}>{word}&nbsp;</span>
+            <span key={`${word}-${index}`}>{word}</span>
           ))}
         </h2>
         <div className="problem__layout">
