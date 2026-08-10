@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { Geist } from "next/font/google";
 import "./globals.css";
-
-const geist = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -44,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body className={geist.variable}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

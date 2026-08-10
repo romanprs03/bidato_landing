@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap");
+
 :root {
   color-scheme: dark;
-  font-family: var(--font-geist-sans), "Helvetica Neue", Arial, sans-serif;
+  font-family: "Geist", "Helvetica Neue", Arial, sans-serif;
   --ink: #05070a;
   --ink-raised: #0a0f18;
   --navy: #071a3c;
