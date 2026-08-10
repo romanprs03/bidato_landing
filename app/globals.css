@@ -167,11 +167,11 @@ img {
   transition: transform 300ms ease;
 }
 
-.nav__links > a:hover {
+.nav__links > a:not(.nav__contact):hover {
   color: var(--white);
 }
 
-.nav__links > a:hover::after {
+.nav__links > a:not(.nav__contact):hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -189,6 +189,12 @@ img {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  transition: background-color 220ms ease, color 220ms ease, transform 180ms ease;
+}
+
+.nav__contact:hover {
+  background: var(--cyan);
+  color: var(--ink);
 }
 
 .nav__contact svg {
@@ -198,6 +204,15 @@ img {
 
 .nav__contact:hover svg {
   transform: translate(3px, -3px);
+}
+
+.nav__contact:active {
+  transform: translateY(1px);
+}
+
+.nav__contact:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
 }
 
 .nav__toggle {
